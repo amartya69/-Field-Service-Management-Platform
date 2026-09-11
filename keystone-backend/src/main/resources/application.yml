@@ -40,6 +40,7 @@ server:
   port: 8080
 
 keystone:
- jwt:
-  secret: ${KEYSTONE_JWT_SECRET}
-    
+  jwt:
+    secret: ${KEYSTONE_JWT_SECRET}
+    expirationMs: 86400000
+    refreshExpirationMs: 604800000
