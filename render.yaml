@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: keystone-backend
+    env: docker
+    plan: free
+    dockerfilePath: keystone-backend/Dockerfile
+    dockerContext: keystone-backend
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: keystone-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: keystone-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: keystone-db
+          property: password
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.PostgreSQLDialect
+      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+        value: org.postgresql.Driver
+      - key: KEYSTONE_JWT_SECRET
+        generateValue: true
+      - key: KEYSTONE_ALLOWED_ORIGINS
+        sync: false # User will manually update this on Render settings with Vercel Frontend URL
+
+databases:
+  - name: keystone-db
+    databaseName: keystonedb
+    user: keystone_user
+    plan: free

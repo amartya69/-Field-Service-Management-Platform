@@ -1,0 +1,31 @@
+# Node dependencies and build output
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+
+# Maven build outputs
+**/target/
+**/uploads/
+**/*.class
+
+# Local Maven binaries / tools
+/maven-bin/
+
+# Editor/IDE settings
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*

@@ -1,0 +1,12 @@
+{
+  "name": "keystone-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Keystone Root Workspace",
+  "scripts": {
+    "dev": "npm --prefix keystone-frontend run dev",
+    "start": "npm --prefix keystone-frontend run dev",
+    "build": "npm --prefix keystone-frontend run build",
+    "run-all": "powershell -ExecutionPolicy Bypass -File ./run-all.ps1"
+  }
+}
