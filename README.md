@@ -209,7 +209,7 @@ git --version
 
 The backend uses PostgreSQL.
 
-### 1. Create a PostgreSQL database
+#### 1. Create a PostgreSQL database
 
 Open PostgreSQL or pgAdmin and create a database:
 
